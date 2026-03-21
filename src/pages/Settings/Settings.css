@@ -1,0 +1,48 @@
+.settings-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.settings-section {
+  margin-bottom: 12px;
+  padding: 14px;
+  background: var(--tg-theme-secondary-bg-color);
+}
+
+.settings-section__label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--tg-theme-hint-color);
+}
+
+.settings-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.settings-chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.08);
+  font-size: 14px;
+  color: var(--tg-theme-text-color);
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+[data-theme="light"] .settings-chip {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.08);
+}
+
+.settings-chip--active {
+  background: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
+  box-shadow: 0 2px 12px rgba(139,26,58,0.4);
+}

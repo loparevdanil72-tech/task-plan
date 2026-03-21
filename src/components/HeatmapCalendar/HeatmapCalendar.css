@@ -1,0 +1,49 @@
+.heatmap {
+  overflow-x: auto;
+}
+
+.heatmap__days-header {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+  padding-left: 2px;
+}
+
+.heatmap__day-label {
+  width: 14px;
+  font-size: 10px;
+  color: var(--tg-theme-hint-color);
+  text-align: center;
+}
+
+.heatmap__grid {
+  display: flex;
+  gap: 4px;
+}
+
+.heatmap__week {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.heatmap__cell {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.08);
+  transition: background 0.2s;
+}
+
+[data-theme="light"] .heatmap__cell {
+  background: rgba(0,0,0,0.08);
+}
+
+.heatmap__cell--done {
+  background: var(--accent);
+  opacity: 0.85;
+}
+
+.heatmap__cell--future {
+  opacity: 0.15;
+}

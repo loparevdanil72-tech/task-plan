@@ -1,0 +1,93 @@
+.week-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px;
+  margin-bottom: 12px;
+  gap: 4px;
+}
+
+.week-strip__day {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.week-strip__label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tg-theme-hint-color);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.week-strip__day--today .week-strip__label {
+  color: var(--accent-light);
+}
+
+[data-theme="light"] .week-strip__day--today .week-strip__label {
+  color: var(--accent);
+}
+
+.week-strip__day--future .week-strip__label {
+  opacity: 0.4;
+}
+
+/* Flame circle */
+.week-strip__flame {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  color: var(--tg-theme-hint-color);
+  font-size: 20px;
+  line-height: 1;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+[data-theme="light"] .week-strip__flame {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Выполненный день — огонь горит */
+.week-strip__flame--on {
+  background: rgba(139, 26, 58, 0.2);
+  border-color: rgba(196, 57, 90, 0.5);
+  box-shadow: 0 0 10px rgba(196, 57, 90, 0.35);
+  animation: flame-pulse 2s ease-in-out infinite;
+  font-size: 20px;
+}
+
+/* Сегодня, но ещё не выполнено */
+.week-strip__flame--today-empty {
+  border-color: rgba(196, 57, 90, 0.3);
+  background: rgba(139, 26, 58, 0.06);
+}
+
+/* Сегодня подчёркнут точкой снизу */
+.week-strip__day--today::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  position: absolute;
+  bottom: -6px;
+}
+
+[data-theme="light"] .week-strip__day--today::after {
+  background: var(--accent);
+}
+
+.week-strip__day--future .week-strip__flame {
+  opacity: 0.3;
+}
