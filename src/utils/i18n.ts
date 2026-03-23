@@ -95,6 +95,9 @@ export const translations = {
     aboutText: 'Трекер прогресса v1.0 · MVP',
     aboutHint: 'Данные хранятся локально в браузере',
     taskNotFound: 'Задача не найдена',
+    notes: 'Заметки',
+    notesToday: 'Сегодня',
+    notesPlaceholder: 'Планы на день...',
   },
   en: {
     // Nav
@@ -192,6 +195,9 @@ export const translations = {
     aboutText: 'Progress Tracker v1.0 · MVP',
     aboutHint: 'Data is stored locally in the browser',
     taskNotFound: 'Task not found',
+    notes: 'Notes',
+    notesToday: 'Today',
+    notesPlaceholder: 'Plans for the day...',
   },
 };
 

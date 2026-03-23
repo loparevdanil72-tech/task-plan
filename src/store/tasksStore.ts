@@ -10,6 +10,7 @@ interface TasksState {
   tasks: Task[];
   settings: AppSettings;
   lastResetDate: string;
+  isReady: boolean;
   // Actions
   initialize: () => void;
   addTask: (data: Omit<Task, 'id' | 'streak' | 'maxStreak' | 'freezeTokens' | 'lastCompletedDate' | 'completionHistory' | 'createdAt' | 'isArchived'>) => void;
@@ -26,6 +27,7 @@ export const useTasksStore = create<TasksState>((set, get) => ({
   tasks: [],
   settings: { theme: 'auto', language: 'ru' },
   lastResetDate: '',
+  isReady: false,
 
   initialize: () => {
     const tasks = storage.getTasks();
@@ -46,7 +48,7 @@ export const useTasksStore = create<TasksState>((set, get) => ({
     }
     storage.saveLastResetDate(todayStr);
 
-    set({ tasks: updatedTasks, settings, lastResetDate: todayStr });
+    set({ tasks: updatedTasks, settings, lastResetDate: todayStr, isReady: true });
   },
 
   addTask: (data: Omit<Task, 'id' | 'streak' | 'maxStreak' | 'freezeTokens' | 'lastCompletedDate' | 'completionHistory' | 'createdAt' | 'isArchived'>) => {

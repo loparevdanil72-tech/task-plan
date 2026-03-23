@@ -8,6 +8,7 @@ import { TaskDetail } from './pages/TaskDetail/TaskDetail';
 import { Stats } from './pages/Stats/Stats';
 import { Archive } from './pages/Archive/Archive';
 import { Settings } from './pages/Settings/Settings';
+import { Notes } from './pages/Notes/Notes';
 import { initTelegram } from './utils/telegram';
 import { registerForNotifications } from './utils/notifications';
 import { applyTheme, initThemeListener } from './utils/theme';
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/stats" element={<Stats />} />
         <Route path="/archive" element={<Archive />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/notes" element={<Notes />} />
       </Routes>
       <TabBar />
     </HashRouter>

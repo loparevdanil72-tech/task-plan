@@ -7,6 +7,7 @@ export function TabBar() {
   const TABS = [
     { to: '/', icon: '🔥', label: t.home },
     { to: '/tasks', icon: '✅', label: t.tasks },
+    { to: '/notes', icon: '📝', label: t.notes },
     { to: '/archive', icon: '📦', label: t.archive },
     { to: '/stats', icon: '📊', label: t.stats },
     { to: '/settings', icon: '⚙️', label: t.settings },

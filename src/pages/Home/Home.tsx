@@ -10,11 +10,18 @@ export function Home() {
   const t = useT();
   const navigate = useNavigate();
   const tasks = useTasksStore((s) => s.tasks);
+  const isReady = useTasksStore((s) => s.isReady);
 
   const activeTasks = tasks.filter((t) => !t.isArchived);
   const dueTasks = activeTasks.filter(isDueToday);
   const completedToday = dueTasks.filter(isCompletedToday);
   const totalStreak = activeTasks.reduce((sum, t) => sum + t.streak, 0);
+
+  if (!isReady) return (
+    <div className="page home-welcome" style={{ justifyContent: 'center', alignItems: 'center' }}>
+      <div className="home-logo__icon" style={{ fontSize: 72 }}>🔥</div>
+    </div>
+  );
 
   return (
     <div className="page home-welcome">
